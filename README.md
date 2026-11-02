@@ -1,8 +1,8 @@
 # SDD Base IA
 
-**Plantilla base para desarrollo de software guiado por especificaciones (SDD) con asistencia de IA.**
+**Base de referencia para aplicar desarrollo guiado por especificaciones (SDD) con asistencia de IA en otros proyectos.**
 
-Este repositorio proporciona la estructura inicial y las reglas de trabajo para proyectos que siguen la metodología **Specification-Driven Development (SDD)**, donde cada funcionalidad comienza con una especificación formal antes de escribir una sola línea de código. El agente de IA (`pi`) utiliza esta estructura para mantener trazabilidad, claridad y disciplina en cada fase del desarrollo.
+Este repositorio contiene instrucciones y formatos que un agente de IA puede leer y adaptar al proyecto en el que estés trabajando. Puedes usarlo para inicializar un proyecto o para migrar uno existente a SDD. No tienes que copiar esta plantilla encima del proyecto: clónala en una ubicación accesible y dile al agente dónde está.
 
 ---
 
@@ -47,22 +47,39 @@ Este repositorio proporciona la estructura inicial y las reglas de trabajo para 
 
 ## 🚀 Cómo empezar
 
-1. **Clona este repositorio** como base para tu nuevo proyecto.
-2. **Sigue la guía de inicialización** en [`docs/sdd-init.md`](docs/sdd-init.md) — el agente IA te guiará fase por fase partiendo desde la constitución.
-3. **Personaliza `AGENTS.md`** con los datos reales de tu proyecto (descripción, comandos, convenciones).
-4. **Comienza a desarrollar** siguiendo el ciclo SDD: cada nueva funcionalidad abre una carpeta en `specs/`.
+1. **Clona este repositorio** en una ubicación accesible para tu agente de IA. Esta será la ruta de referencia de la base SDD.
+2. **Abre el repositorio de tu proyecto** con el agente de IA. Puede ser nuevo o tener ya código y documentación.
+3. **Copia uno de los prompts de abajo** y reemplaza las rutas y el nombre del proyecto. El agente leerá esta base y seguirá sus instrucciones en el repositorio objetivo.
+4. **Continúa el trabajo en tu proyecto** siguiendo la estructura SDD y las instrucciones que el agente adapte.
+
+Los textos siguientes son prompts para el agente, no comandos de terminal. En ambos casos, `[RUTA_BASE_SDD]` es la ruta donde clonaste este repositorio y `[RUTA_PROYECTO]` la ruta del proyecto objetivo.
+
+### Inicializar un proyecto
+
+Usa este prompt cuando quieras aplicar la base SDD en un proyecto nuevo o que todavía no tenga esta estructura:
+
+> Inicializa el proyecto **[NOMBRE_PROYECTO]**, ubicado en `[RUTA_PROYECTO]`, usando como referencia la base SDD de `[RUTA_BASE_SDD]`. Lee sus instrucciones y formatos, y adáptalos a este proyecto; no copies contenido de ejemplo como si describiera el proyecto. Primero revisa el estado y los archivos existentes. Sigue los puntos de aprobación definidos en la base y no sobrescribas archivos existentes sin consultarme.
+
+### Migrar un proyecto existente
+
+Usa este prompt cuando el proyecto ya tenga código, documentación o convenciones propias. El agente debe revisar el estado actual y **preguntarte antes de migrar**, ofreciendo estas dos opciones:
+
+1. Migrar y adaptar el contenido actual a la estructura SDD.
+2. Conservar el contenido actual bajo `archive/` como referencia y preparar la estructura SDD por separado.
+
+> Migra el proyecto existente **[NOMBRE_PROYECTO]**, ubicado en `[RUTA_PROYECTO]`, usando como referencia la base SDD de `[RUTA_BASE_SDD]`. Antes de mover, modificar o crear archivos, revisa el proyecto y explícame qué contenido encontraste. Luego pregúntame si prefiero (1) migrar y adaptar todo el contenido actual a la estructura SDD o (2) conservarlo bajo `archive/` como referencia y preparar la estructura SDD por separado. Espera mi respuesta antes de actuar, preserva el contenido y no sobrescribas ni elimines archivos sin mi aprobación.
+
+En la opción `archive/`, el contenido se conserva para consulta y reconocimiento del proyecto; no debe tratarse automáticamente como documentación vigente.
 
 ---
 
-## 🤖 Uso con el agente IA (`pi`)
+## 🤖 Uso con tu agente de IA
 
-Este proyecto está diseñado para trabajar con el agente de codificación `pi`. Al iniciar una sesión, el agente:
+Esta base puede usarse con cualquier aplicación o *harness* de codificación con IA que utilices. Abre en esa aplicación el repositorio de tu proyecto y usa los prompts de la sección [Cómo empezar](#-cómo-empezar), indicando la ruta a esta base para que el agente lea y adapte sus instrucciones y formatos al contexto real del proyecto.
 
-1. Verifica si existe la estructura SDD (`specs/` y `docs/constitution.md`).
-2. Si **no existe**, lee [`docs/sdd-init.md`](docs/sdd-init.md) y ejecuta las fases de inicialización paso a paso.
-3. Si **existe**, lee la constitución, la arquitectura y la especificación activa antes de tocar código.
+Al iniciar una sesión, el agente debe comprobar si existe la estructura SDD (`specs/` y `docs/constitution.md`). Si falta, debe seguir [`docs/sdd-init.md`](docs/sdd-init.md) y sus puntos de aprobación. Si ya existe, debe leer la constitución, revisar la arquitectura e identificar la especificación aplicable antes de modificar código.
 
-Consulta [`AGENTS.md`](AGENTS.md) para ver las reglas detalladas del agente.
+Consulta [`AGENTS.md`](AGENTS.md) para ver las reglas que describen el comportamiento esperado del agente.
 
 ---
 
@@ -77,6 +94,8 @@ Consulta [`AGENTS.md`](AGENTS.md) para ver las reglas detalladas del agente.
 ---
 
 ## 🛠️ Comandos
+
+Este repositorio no incluye comandos ejecutables de inicialización o migración: esos flujos se realizan con los prompts de la sección [Cómo empezar](#-cómo-empezar). Los comandos para ejecutar, probar o formatear deben definirse en el `AGENTS.md` del proyecto objetivo.
 
 *(Pendiente de definir según el proyecto específico)*
 
