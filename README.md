@@ -107,7 +107,15 @@ Este repositorio no incluye comandos ejecutables de inicialización o migración
 
 ---
 
-Estas son las tres formas de trabajar con especificaciones (Spec-Driven Development o SDD), explicadas de manera sencilla y llevadas al desarrollo de software.
+## 🧩 Formas de trabajo con SDD
+
+Existen tres maneras de aplicar Spec-Driven Development. Se diferencian en **cuándo entra la especificación** en el proceso y **cuánta autoridad** tiene frente al código: en una se escribe antes de programar, en otra acompaña al desarrollo ya en marcha y en la última manda sobre todo el proyecto. Aquí van explicadas de manera sencilla y llevadas al desarrollo de software.
+
+| Forma | Momento de la especificación | Rol frente al código |
+|-------|------------------------------|----------------------|
+| **Spec-First** | Antes de escribir código | Define qué construir |
+| **Spec-Anchored** | Durante o después del desarrollo | Guía y valida lo ya construido |
+| **Spec-as-Source** | Permanente | Es la fuente de verdad del proyecto |
 
 ### 1. Spec-First (Primero la especificación)
 
@@ -127,11 +135,11 @@ La especificación es la fuente principal del proyecto. El código se construye 
 
 Ejemplo: Si cambias las reglas del login en la especificación, ese cambio debe reflejarse también en el código.
 
-La diferencia fundamental:
+**La diferencia fundamental:**
 
-- Spec-First: Primero defines qué construir.
-- Spec-Anchored: Desarrollas manteniendo la especificación como guía.
-- Spec-as-Source: La especificación es la autoridad principal de todo el desarrollo.
+- **Spec-First:** Primero defines qué construir y luego lo implementas.
+- **Spec-Anchored:** Desarrollas manteniendo la especificación como guía para no desviarte.
+- **Spec-as-Source:** La especificación es la autoridad principal de todo el desarrollo.
 
 ---
 
